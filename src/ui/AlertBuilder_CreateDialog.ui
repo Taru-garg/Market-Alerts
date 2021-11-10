@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Create New Alert - ALRT</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <activeon>../ui_resouces/APP_LOGO_.png</activeon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Dialog { 
+background-color : qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(8, 8, 8, 255), stop:1 rgba(1, 11, 19, 255))
+}
+
+QLineEdit {
+	background-color : #555555;
+	border-radius : 10px;
+}
+
+QComboBox {
+	background-color : #555555;
+	color : white;
+	font: 700 9pt &quot;Segoe UI&quot;;
+}
+
+QComboBox QAbstractItemView {
+	color : darkgray;
+    background-color: white;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(src/ui_resouces/drop_down.svg);
+}
+</string>
+  </property>
+  <widget class="QComboBox" name="marketName">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>160</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius : 10px;
+</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>BTC</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <activeon>../ui_resouces/BC_Logo_.png</activeon>
+     </iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ETH</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <activeon>../ui_resouces/ETH_LOGO_.png</activeon>
+     </iconset>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>DOGE</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <activeon>../ui_resouces/DOGE_LOGO_.svg</activeon>
+     </iconset>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>81</x>
+     <y>19</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../ui_resouces/APP_LOGO_.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="createAlert">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>290</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius : 20px;
+background-color : #555555;
+font: 900 10pt &quot;Arial Black&quot;;
+color : white;
+</string>
+   </property>
+   <property name="text">
+    <string>Create</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="price">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>220</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	color : white;
+	font: 700 9pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>e.g. 5000000 (in INR)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="email">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>110</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	color : white;
+	font: 700 9pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>E-Mail</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="marketNameLabel">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>160</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 bold 10pt &quot;Cambria&quot;;
+color : rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>when</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="triggerReason">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>160</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius : 10px;
+</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>above</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>below</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="sendMeAnAlertOnLabel">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>110</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 bold 10pt &quot;Cambria&quot;;
+color : rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Send me an alert on</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="priceLabel">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>220</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 bold 10pt &quot;Cambria&quot;;
+color : rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>price</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="triggerReasonLabel">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>160</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 bold 10pt &quot;Cambria&quot;;
+color : rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>goes</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>290</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius : 20px;
+background-color : #555555;
+font: 900 10pt &quot;Arial Black&quot;;
+color : white;
+</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>20</y>
+     <width>401</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 28pt &quot;MV Boli&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Create New Alert</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>49</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 italic 9pt &quot;Cambria&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>v 1.0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>370</y>
+     <width>61</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 italic 9pt &quot;Cambria&quot;;
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Taru Garg</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>email</tabstop>
+  <tabstop>marketName</tabstop>
+  <tabstop>triggerReason</tabstop>
+  <tabstop>price</tabstop>
+  <tabstop>createAlert</tabstop>
+  <tabstop>cancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

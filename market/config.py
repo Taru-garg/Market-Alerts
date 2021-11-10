@@ -1,0 +1,1 @@
+API_BASE_ENDPOINT = "https://api.wazirx.com/api/v2/tickers"
