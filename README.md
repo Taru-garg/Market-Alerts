@@ -25,6 +25,9 @@ and PyQT6 for the GUI side of things.
  
  ### Views 
  
- - Start View
- - New Alert View
- - Old Alert View
+#### Start View
+![Start Screen](views/Start.png)
+#### New Alert View
+![Create Screen](views/Create.png)
+#### Old Alert View
+![Edit Screen](views/Edit.png)
