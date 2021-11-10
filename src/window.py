@@ -71,23 +71,25 @@ class EditOldAlertUi(QtWidgets.QDialog):
 
     def load_ui_alerts(self):
         alerts = read_alerts()
-        # print(alerts)
         self.tableWidget.setRowCount(len(alerts))
         table_row = 0
         for alert in alerts:
-            self.tableWidget.setItem(
-                table_row, 0, QtWidgets.QTableWidgetItem(alert.email)
-            )
-            self.tableWidget.setItem(
-                table_row, 1, QtWidgets.QTableWidgetItem(alert.marketName)
-            )
-            self.tableWidget.setItem(
-                table_row, 2, QtWidgets.QTableWidgetItem(alert.triggerReason)
-            )
-            self.tableWidget.setItem(
-                table_row, 3, QtWidgets.QTableWidgetItem(alert.price)
-            )
-            table_row = table_row + 1
+            try:
+                self.tableWidget.setItem(
+                    table_row, 0, QtWidgets.QTableWidgetItem(alert.email)
+                )
+                self.tableWidget.setItem(
+                    table_row, 1, QtWidgets.QTableWidgetItem(alert.marketName)
+                )
+                self.tableWidget.setItem(
+                    table_row, 2, QtWidgets.QTableWidgetItem(alert.triggerReason)
+                )
+                self.tableWidget.setItem(
+                    table_row, 3, QtWidgets.QTableWidgetItem(alert.price)
+                )
+                table_row = table_row + 1
+            except:
+                continue
         self.tableWidget.resizeColumnsToContents()
 
     # def remove_selected_rows(self):

@@ -8,7 +8,10 @@ class Alert():
             with open(args[0], 'r') as file:
                 if file.name.endswith('alrt'):
                     self.location = args[0]
+                    print(self.location)
                     self.email, self.marketName, self.triggerReason, self.price = (file.readline()).split(' ')
+                else:
+                    raise TypeError('Not an alrt file')
         elif len(args) == 4:
             self.email = args[0]
             self.price = args[1]
