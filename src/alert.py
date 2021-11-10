@@ -1,5 +1,3 @@
-from os import path
-from typing import final
 import uuid
 import smtplib
 from email.message import EmailMessage
